@@ -3754,6 +3754,9 @@ input, select, textarea {
 		}
 
 /* Main */
+#menutop {
+    text-align: left;
+}
 
 	#main {
 		background-color: #ffffff;
