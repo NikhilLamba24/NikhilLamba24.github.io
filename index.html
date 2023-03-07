@@ -51,12 +51,20 @@
 					<div id="main">
 
 						<!-- Featured Post -->
+
+
 							<article class="post featured">
 								<header class="major">
 
 									<h2>This includes<br />
 									thoughts and projects</h2>
-									<p>Being technical enthusiast I also like to involve and evolve with nature. As, somehow we got all the elements from mother nature even to make computers. And also almost all the inspiring ideas of great inventions got from nature.</p>
+									<p>Being technical enthusiast I also like to involve and evolve with nature's needs. As, almost all the inspiring ideas of great inventions did come from nature.</p>
+									<div id="menutop"><ul style="list-style-type:disc">
+										<b><u><i>Educational background</i></u></b>
+										<li><b>Bachelor's: </b> Computer Science</li>
+										<li><b>Master's: </b>Artificial Intelligence ( major areas:- ML, DL, Computer Vision, NLP, Data Science)</li>
+										</ul>
+									</div>
 								</header>
 
 								<ul class="actions special">
@@ -66,16 +74,72 @@
 
 						<!-- Posts -->
 							<section class="posts">
+
 								<article>
 									<header>
 										<span class="date"></span>
-										<h2>Disease predictor<br />
-										for Quarantine Buddies</h2>
+										<h2> Computer Vision based scene understanding</h2>
 									</header>
-									<a  class="image fit"><img src="images/Quarantine buddies.jfif" alt="" /></a>
-									<p>This includes the backend coded using python. Using ANN algorithm the people that are self quaratine at home can put two symptoms of their present body condition as they feel and the output will be 5 diseases as per severeness. </p>
+									
+									<img width="200px" height="200px" src="detections.gif">
+									<img width="200px" height="200px" src="poses.gif">
+									<p>It includes implementation of complete computer vision pipeline including: camera calibration, Object detection, segmentation, pose estimation, depth estimation, 3d point cloud creation  </p>
+									<div id="menutop">
+									<ul style="list-style-type:disc">
+										<li><b>Target audience: </b>Any organization working on complete scene understanding</li>
+										<li><b>Usage: </b> Backend pipeline integrator</li>
+										<li><b>Output: </b> Player pose estimation,detection,masking,3d conversion</li>
+										<li><b>Tech stack: </b>Python, C++, Detectron(Facebook research), Openpose(CMU research)</li>
+									  </ul>
+									  </div>
 									<ul class="actions special">
-										<li><a href="https://github.com/NikhilLamba24/Sol.-Life/blob/master/Sol_Life_Sciences_final.ipynb" class="button">Full Project</a></li>
+										<li><a href="https://github.com/NikhilLamba24/Computer-Vision-repos" class="button">Full Project</a></li>
+									</ul>
+								</article>
+
+
+
+								<article>
+									<header>
+										<span class="date"></span>
+										<h2> Object tracking by detection</h2>
+									</header>
+									
+									<img width="300px" height="200px" src="trac.gif">
+									<p>This includes a complete implementation of Deep Learning based tracker and OpenCV based trackers. Also contains accuracy measures for quantitative analysis of the tracking scenario with graphs.</p>
+									<div id="menutop">
+									<ul style="list-style-type:disc">
+										<li><b>Target audience: </b>Govt. and private agencies for suspicious person's detection</li>
+										<li><b>Usage: </b> Checking efficiency for real time data</li>
+										<li><b>Output: </b> Tracked person with accuracy measures</li>
+										<li><b>Tech stack: </b>Python, OpenCV, pandas, YOLOv5 + DeepSort</li>
+									  </ul>
+									  </div>
+									<ul class="actions special">
+										<li><a href="https://github.com/NikhilLamba24/Trackers_comparison" class="button">Full Project</a></li>
+									</ul>
+								</article>
+
+
+
+								<article>
+									<header>
+										<span class="date"></span>
+										<h2> Contact less disease prediction for pandemic </h2>
+									</header>
+									
+										<img width="400px" height="200px" src="images/Quarantine buddies.jfif">
+									<p>This includes the backend coded using python. Using ANN algorithm the people that are self quaratine at home can put two symptoms of their present body condition as they feel and the output will be 5 diseases as per severeness. </p>
+									<div id="menutop">
+									<ul style="list-style-type:disc">
+										<li><b>Target audience: </b>People those are in quarantine</li>
+										<li><b>Usage: </b> Input 2 current symptoms from patient</li>
+										<li><b>Output: </b>Model predicts  diseases with severeness</li>
+										<li><b>Tech stack: </b>Python, ANN , web crawling(for data fetching)</li>
+									  </ul>
+									  </div>
+									<ul class="actions special">
+										<li><a href="https://github.com/NikhilLamba24/SolLife/blob/master/LiScifin.ipynb" class="button">Full Project</a></li>
 									</ul>
 								</article>
 
@@ -87,8 +151,15 @@
 										<h2>Lungs virus <br />
 										classification app</h2>
 									</header>
-									<a class="image fit"><img src="images/XRayapp.jfif" alt="" /></a>
-									<p>This is a web app that takes input as chest XRay image and gives output after classification from CNN model either the patient is suffering from Viral,Bacterial Pneumonia or is Normal.</p>
+									<img width="400px" height="240px" src="images/XRayapp.jfif" alt="" />
+									<p>This is a web app code that takes input as chest XRay image and gives output after classification from CNN model either the patient is suffering from Viral,Bacterial Pneumonia or is Normal.</p>
+									<div id="menutop"><ul style="list-style-type:disc">
+										<li><b>Target audience: </b>People living far from main cities</li>
+										<li><b>Usage: </b> Input of patient's chest xray image</li>
+										<li><b>Output: </b>Outputs as highlighted region of infection</li>
+										<li><b>Tech stack: </b>Python, CNN , flask(micro-service), initial mode deployed on linode cloud</li>
+									  </ul>
+									</div>
 									<ul class="actions special">
 										<li><a href="https://github.com/NikhilLamba24/Cisco-Meraki-Hackathon" class="button">Full Project</a></li>
 									</ul>
@@ -103,7 +174,14 @@
  								 </header>
  								 <a class="image fit"><img src="images/SalaryBluff.jfif" alt="" /></a>
  								 <p>This is a model that predicts the salaries of employees according to work experience. Usage area: HR office, as new candidate comes to join it will predict the previous salary of the candidate as per work experience and trend in present market. So, no one can play a bluff. </p>
- 								 <ul class="actions special">
+ 								 <div id="menutop"><ul style="list-style-type:disc">
+									<li><b>Target audience: </b>HR community</li>
+									<li><b>Usage: </b> As per market trends, prediction of salary as per experience in a field</li>
+									<li><b>Output: </b>Predicts salary as per trend</li>
+									<li><b>Tech stack: </b>Python, core ML</li>
+								  </ul>
+								</div>
+								 <ul class="actions special">
  									 <li><a href=" https://github.com/NikhilLamba24/Salary-Bluff-Predictor" class="button">Full Project</a></li>
  								 </ul>
  							 </article>
@@ -117,7 +195,14 @@
 							 	</header>
 							 	<a class="image fit"><img src="images/CustomerChurn.jfif" alt="" /></a>
 							 	<p>This is the analysis of the bank's customers that left the bank and is based on their history while being in.So, based on the customer's credit score, present balance, etc. we will predict that which customer is going to leave the bank and which one will not based on the patterns of their activity in their bank account(like active transactions or not, etc.) .</p>
-							 	<ul class="actions special">
+							 	<div id="menutop"><ul style="list-style-type:disc">
+									<li><b>Target audience: </b>Banks, payment giants (stripe, paypal)</li>
+									<li><b>Usage: </b> </li>Prediction of customer retention as per previous credit score, present balance,etc.
+									<li><b>Output: </b>Customer staying or not</li>
+									<li><b>Tech stack: </b>Python, ANN , core ML</li>
+								  </ul>
+								</div>
+								<ul class="actions special">
 							 		<li><a href="https://github.com/NikhilLamba24/churn_model" class="button">Full Project</a></li>
 							 	</ul>
 							 </article>
@@ -142,7 +227,7 @@
 							</section>
 							<section>
 								<h3>Phone</h3>
-								<p>(+91) 7015491653</p>
+								<p>(+91) 8930930530</p>
 							</section>
 							<section>
 								<h3>Email</h3>
