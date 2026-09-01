@@ -127,6 +127,22 @@
 			margin: 16px 0 20px;
 			font-weight: 700;
 		}
+		.hero-photo {
+			width: 106px;
+			height: 106px;
+			border-radius: 50%;
+			overflow: hidden;
+			border: 1px solid var(--line);
+			flex: none;
+			margin-left: auto;
+			margin-right: 70px;
+		}
+		.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.lede-row {
+			display: flex;
+			align-items: center;
+			margin-top: 16px;
+		}
 		.hero .lede { font-size: 1.28rem; line-height: 1.45; font-weight: 500; color: var(--ink); max-width: 24ch; }
 		.hero .sub { color: var(--muted); margin-top: 16px; max-width: 58ch; line-height: 1.75; }
 		.currently { margin-top: 24px; font-weight: 600; display: flex; align-items: center; gap: 9px; }
@@ -461,7 +477,10 @@
 					<div class="hero-text">
 						<p class="kicker">AI Engineer · Agentic AI · LLM Systems · Computer Vision</p>
 						<h1>Nikhil Lamba</h1>
-						<p class="lede">Building AI systems that reason, act, and operate in production.</p>
+						<div class="lede-row">
+							<p class="lede">Building AI systems that reason, act, and operate in production.</p>
+							<div class="hero-photo"><img src="images/no_bg.jpeg" alt="Nikhil Lamba" /></div>
+						</div>
 						<p class="sub">I work on agentic AI, LLM systems, multi-agent platforms, and deep-learning systems — from research and experimentation to production. I also build useful web apps over weekends, ship them publicly on X, and share what I learn as an active open-source contributor in X.com's indie-hacking communities.</p>
 						<p class="currently"><span class="dot"></span>Currently: Founding Engineer at Adopt AI</p>
 						<div class="hero-actions">
@@ -713,6 +732,7 @@
 					<h3>Faster Pipeline for Depth Generation of Soccer Players</h3>
 					<div class="venue">N. Lamba, S. Singh, A. Khosla</div>
 					<p>Faster pipeline for monocular depth generation of soccer players, presented at the 2023 ICDAIC conference.</p>
+					<div class="links"><a href="https://drive.google.com/file/d/1LkzzS45csNvbdRfaE1wNhemgfidfthmy/view?usp=sharing">Read the paper</a></div>
 				</div>
 
 				<div class="pub">
