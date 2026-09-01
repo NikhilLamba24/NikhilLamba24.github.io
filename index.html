@@ -1,762 +1,809 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<title>Nikhil Lamba — AI Engineer | Agentic AI & Deep Learning</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Nikhil Lamba — AI Engineer building agentic AI systems, multi-agent platforms, and deep-learning products. I ship useful web apps over weekends and share them in public on X." />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			:root {
-				--ink: #212931;
-				--muted: #717981;
-				--soft: #909498;
-				--accent: #18bfef;
-				--violet: #8b5cf6;
-				--line: #e7ebef;
-			}
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Nikhil Lamba — AI Engineer · Agentic AI · LLM Systems</title>
+	<meta name="description" content="Nikhil Lamba — AI engineer building agentic AI systems, multi-agent platforms, and deep-learning products. Founding Engineer at Adopt AI." />
+	<style>
+		:root {
+			--bg: #faf9f7;
+			--surface: #ffffff;
+			--ink: #17181a;
+			--muted: #5c6670;
+			--faint: #8a929a;
+			--accent: #2563eb;
+			--line: #e6e4df;
+			--mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+			--sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			--maxw: 1080px;
+		}
 
-			/* ---------- Shared ---------- */
-			.grad {
-				background: linear-gradient(92deg, #18bfef 0%, #7dd3fc 45%, #a78bfa 100%);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				color: transparent;
-			}
-			.eyebrow {
-				display: inline-flex;
-				align-items: center;
-				gap: .65rem;
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				text-transform: uppercase;
-				letter-spacing: .24em;
-				font-size: .72rem;
-				color: #18bfef;
-				margin-bottom: 1.25rem;
-			}
-			.eyebrow::before {
-				content: "";
-				width: 2rem;
-				height: 2px;
-				background: linear-gradient(90deg, #18bfef, #8b5cf6);
-				display: inline-block;
-			}
+		* { box-sizing: border-box; }
 
-			/* ---------- Intro ---------- */
-			#intro h1 {
-				font-size: clamp(3.3rem, 8vw, 4.8rem);
-				letter-spacing: .02em;
-			}
-			#intro .badge {
-				display: inline-block;
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				font-size: .7rem;
-				letter-spacing: .18em;
-				text-transform: uppercase;
-				color: #d7f3ff;
-				border: 1px solid rgba(24, 191, 239, .55);
-				background: rgba(24, 191, 239, .12);
-				border-radius: 999px;
-				padding: .55rem 1.1rem;
-				margin-bottom: 1.75rem;
-			}
-			#intro .intro-lede {
-				font-style: normal;
-				font-size: 1.2rem;
-				line-height: 1.7;
-				max-width: 46rem;
-				margin: 1.4rem auto 0 auto;
-				color: #eef3f6;
-			}
-			#intro .intro-sub {
-				font-style: normal;
-				font-size: 1rem;
-				line-height: 1.75;
-				max-width: 48rem;
-				margin: 1.25rem auto 0 auto;
-				color: #c4cdd4;
-			}
-			#intro .intro-sub strong { color: #ffffff; }
-			#intro .now-pill {
-				display: inline-flex;
-				align-items: center;
-				gap: .55rem;
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				font-size: .72rem;
-				letter-spacing: .12em;
-				text-transform: uppercase;
-				color: #7ee7c0;
-				background: rgba(46, 213, 115, .12);
-				border: 1px solid rgba(46, 213, 115, .4);
-				border-radius: 999px;
-				padding: .5rem 1rem;
-				margin-top: 1.6rem;
-			}
-			#intro .now-pill .dot {
-				width: .5rem;
-				height: .5rem;
-				border-radius: 50%;
-				background: #2ed573;
-				box-shadow: 0 0 0 0 rgba(46, 213, 115, .6);
-				animation: pulse 1.8s infinite;
-			}
-			@keyframes pulse {
-				0% { box-shadow: 0 0 0 0 rgba(46, 213, 115, .55); }
-				70% { box-shadow: 0 0 0 9px rgba(46, 213, 115, 0); }
-				100% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0); }
-			}
-			#intro .intro-icons {
-				display: flex;
-				justify-content: center;
-				gap: 1rem;
-				margin: 1.5rem 0 0 0;
-			}
-			#intro .intro-icons a {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 2.6rem;
-				height: 2.6rem;
-				border-radius: 50%;
-				border: 1px solid rgba(255, 255, 255, .35);
-				color: #ffffff !important;
-				font-size: 1.05rem;
-				transition: transform .2s ease, border-color .2s ease, color .2s ease, background .2s ease;
-			}
-			#intro .intro-icons a:hover {
-				transform: translateY(-3px);
-				border-color: #18bfef;
-				color: #18bfef !important;
-				background: rgba(24, 191, 239, .1);
-			}
+		html { scroll-behavior: smooth; }
 
-			/* ---------- Nav ---------- */
-			#nav .links a {
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				letter-spacing: .05em;
-				text-transform: uppercase;
-				font-size: .78rem;
-			}
-			#nav .links li.active a { color: #18bfef; }
+		body {
+			margin: 0;
+			background: var(--bg);
+			color: var(--ink);
+			font-family: var(--sans);
+			font-size: 16px;
+			line-height: 1.6;
+			-webkit-font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
+		}
 
-			/* ---------- Sections ---------- */
-			.sec { text-align: left; }
-			.sec-head { margin-bottom: 2.75rem; }
-			.sec-head h2 { font-size: 2.4rem; line-height: 1.15; }
-			.sec-head .lede {
-				color: #717981;
-				font-size: 1.1rem;
-				line-height: 1.7;
-				margin-top: 1rem;
-				max-width: 44rem;
-			}
+		a { color: inherit; text-decoration: none; }
+		a:hover { color: var(--accent); }
+		img { display: block; max-width: 100%; }
+		ul { list-style: none; margin: 0; padding: 0; }
 
-			/* ---------- About ---------- */
-			.about-cols { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2.5rem; align-items: start; }
-			.about-cols p { color: #4a515a; line-height: 1.8; margin-bottom: 1.1rem; font-size: 1.02rem; }
-			.now-card {
-				border: 1px solid var(--line);
-				border-radius: 16px;
-				padding: 1.75rem;
-				background: linear-gradient(180deg, #fbfdff, #f4f8fb);
-			}
-			.now-card h3 {
-				display: flex;
-				align-items: center;
-				gap: .55rem;
-				font-size: 1.05rem;
-				text-transform: uppercase;
-				letter-spacing: .12em;
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				margin-bottom: 1.1rem;
-			}
-			.now-card h3 .dot { width: .55rem; height: .55rem; border-radius: 50%; background: #2ed573; box-shadow: 0 0 0 0 rgba(46,213,115,.6); animation: pulse 1.8s infinite; }
-			.now-card ul { list-style: none; margin: 0; padding: 0; }
-			.now-card ul li {
-				position: relative;
-				padding-left: 1.4rem;
-				color: #4a515a;
-				line-height: 1.65;
-				margin-bottom: .7rem;
-			}
-			.now-card ul li::before {
-				content: "";
-				position: absolute;
-				left: 0;
-				top: .55rem;
-				width: .5rem;
-				height: .5rem;
-				border-radius: 50%;
-				background: linear-gradient(135deg, #18bfef, #8b5cf6);
-			}
+		.wrap { max-width: var(--maxw); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 
-			/* ---------- Stats ---------- */
-			.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
-			.stat {
-				border: 1px solid var(--line);
-				border-radius: 14px;
-				padding: 1.5rem 1rem;
-				text-align: center;
-				background: linear-gradient(180deg, #fbfdff, #f6f9fc);
-			}
-			.stat b {
-				display: block;
-				font-size: 2.05rem;
-				line-height: 1.1;
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				background: linear-gradient(90deg, #18bfef, #8b5cf6);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				margin-bottom: .5rem;
-			}
-			.stat span { color: #717981; font-size: .82rem; line-height: 1.5; }
+		section { scroll-margin-top: 78px; }
 
-			/* ---------- Experience ---------- */
-			.xp { list-style: none; margin: 0; padding: 0; }
-			.xp > li {
-				position: relative;
-				padding: 0 0 2.6rem 2.1rem;
-				border-left: 2px solid #e7ebef;
-				margin-left: .45rem;
-			}
-			.xp > li:last-child { padding-bottom: .25rem; }
-			.xp > li::before {
-				content: "";
-				position: absolute;
-				left: -.55rem;
-				top: .4rem;
-				width: .95rem;
-				height: .95rem;
-				border-radius: 50%;
-				background: linear-gradient(135deg, #18bfef, #8b5cf6);
-				box-shadow: 0 0 0 5px #eaf6fc;
-			}
-			.xp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; }
-			.xp-role { font-size: 1.3rem; font-weight: 700; color: var(--ink); }
-			.xp-org {
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				font-size: .8rem;
-				letter-spacing: .1em;
-				text-transform: uppercase;
-				color: #18bfef;
-			}
-			.xp-when {
-				margin-left: auto;
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 700;
-				font-size: .78rem;
-				letter-spacing: .08em;
-				text-transform: uppercase;
-				color: #909498;
-			}
-			.xp-where { width: 100%; color: #909498; font-size: .9rem; margin-top: .2rem; }
-			.xp-desc { color: #717981; line-height: 1.7; margin-top: .5rem; }
-			.xp ul { list-style: disc; padding-left: 1.15rem; margin: .8rem 0 0 0; }
-			.xp ul li { color: #4a515a; line-height: 1.65; margin-bottom: .45rem; }
-			.xp ul li::before { display: none; }
-			.xp ul li b { color: #212931; }
+		/* ---------- Header ---------- */
+		.site-head {
+			position: sticky;
+			top: 0;
+			z-index: 50;
+			background: rgba(250, 249, 247, .92);
+			backdrop-filter: blur(8px);
+			border-bottom: 1px solid var(--line);
+		}
+		.site-head .inner {
+			max-width: var(--maxw);
+			margin: 0 auto;
+			padding: 0 24px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			gap: 30px;
+		}
+		.brand {
+			font-weight: 700;
+			font-size: 1.06rem;
+			letter-spacing: -.01em;
+			color: var(--ink);
+		}
+		.nav { display: flex; gap: 24px; margin-left: auto; }
+		.nav a {
+			font-size: .92rem;
+			color: var(--muted);
+			border-bottom: 1px solid transparent;
+			padding-bottom: 2px;
+			transition: color .15s ease, border-color .15s ease;
+		}
+		.nav a:hover, .nav a.active { color: var(--ink); border-color: var(--accent); }
+		.head-links { display: flex; gap: 16px; align-items: center; }
+		.head-links a { font-size: .92rem; font-weight: 600; color: var(--muted); }
+		.head-links a:hover { color: var(--ink); }
 
-			/* ---------- Projects ---------- */
-			.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-			.proj {
-				display: flex;
-				flex-direction: column;
-				overflow: hidden;
-				border: 1px solid var(--line);
-				border-radius: 16px;
-				background: #ffffff;
-				text-align: left;
-				transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-			}
-			.proj:hover {
-				transform: translateY(-6px);
-				border-color: #18bfef;
-				box-shadow: 0 22px 44px -26px rgba(33, 41, 49, .4);
-			}
-			.proj .thumb { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #eef2f5; }
-			.proj .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
-			.proj:hover .thumb img { transform: scale(1.04); }
-			.proj .visual {
-				aspect-ratio: 16 / 9;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 3.2rem;
-				color: #ffffff;
-				background: radial-gradient(120% 120% at 20% 10%, #13415e 0%, #0f172a 55%, #31216a 100%);
-			}
-			.proj .body { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: .8rem; flex: 1; }
-			.proj h3 { font-size: 1.22rem; line-height: 1.25; color: var(--ink); }
-			.proj p { color: #717981; font-size: .96rem; line-height: 1.65; flex: 1; }
-			.tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-			.tag {
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-size: .66rem;
-				font-weight: 700;
-				letter-spacing: .06em;
-				text-transform: uppercase;
-				color: #3b4650;
-				background: #eef6fb;
-				border: 1px solid #d7eaf5;
-				padding: .32rem .55rem;
-				border-radius: 999px;
-			}
-			.proj .links { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-			.proj .links a {
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				font-size: .82rem;
-				letter-spacing: .04em;
-				text-transform: uppercase;
-				color: #18bfef;
-				border-bottom: 1px solid rgba(24, 191, 239, .35);
-			}
-			.proj .links a:hover { border-bottom-color: transparent; color: #8b5cf6; }
+		.menu-check { display: none; }
+		.menu-btn {
+			display: none;
+			flex-direction: column;
+			gap: 4px;
+			margin-left: auto;
+			padding: 10px 4px;
+			cursor: pointer;
+		}
+		.menu-btn span { width: 20px; height: 2px; background: var(--ink); }
+		.mobile-nav {
+			display: none;
+			position: absolute;
+			top: 60px;
+			left: 0;
+			right: 0;
+			background: var(--bg);
+			border-bottom: 1px solid var(--line);
+			padding: 8px 24px 18px;
+		}
+		.mobile-nav a {
+			display: block;
+			padding: 11px 0;
+			font-size: 1rem;
+			color: var(--ink);
+			border-bottom: 1px solid var(--line);
+		}
+		.mobile-nav a:last-child { border-bottom: none; }
+		.menu-check:checked ~ .mobile-nav { display: block; }
 
-			/* ---------- Research ---------- */
-			.research { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-			.rs { border: 1px solid var(--line); border-radius: 16px; padding: 1.6rem; background: #ffffff; }
-			.rs .kind {
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				font-size: .66rem;
-				letter-spacing: .14em;
-				text-transform: uppercase;
-				color: #8b5cf6;
-			}
-			.rs h3 { font-size: 1.18rem; line-height: 1.35; margin: .6rem 0 .5rem; color: var(--ink); }
-			.rs p { color: #717981; font-size: .95rem; line-height: 1.65; }
-			.rs .links { margin-top: .9rem; }
-			.rs .links a { font-family: "Source Sans Pro", Helvetica, sans-serif; font-weight: 900; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: #18bfef; border-bottom: 1px solid rgba(24,191,239,.35); }
-			.rs .links a:hover { border-bottom-color: transparent; color: #8b5cf6; }
+		/* ---------- Hero ---------- */
+		.hero { padding: 76px 0 64px; }
+		.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
+		.kicker {
+			font-family: var(--mono);
+			font-size: .72rem;
+			letter-spacing: .16em;
+			text-transform: uppercase;
+			color: var(--faint);
+		}
+		.hero h1 {
+			font-size: clamp(2.5rem, 5.4vw, 3.6rem);
+			line-height: 1.05;
+			letter-spacing: -.025em;
+			margin: 16px 0 20px;
+			font-weight: 700;
+		}
+		.hero .lede { font-size: 1.28rem; line-height: 1.45; font-weight: 500; color: var(--ink); max-width: 24ch; }
+		.hero .sub { color: var(--muted); margin-top: 16px; max-width: 58ch; line-height: 1.75; }
+		.currently { margin-top: 24px; font-weight: 600; display: flex; align-items: center; gap: 9px; }
+		.currently .dot { width: 8px; height: 8px; border-radius: 50%; background: #16a34a; }
+		.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+		.btn {
+			display: inline-block;
+			padding: 10px 18px;
+			font-size: .88rem;
+			font-weight: 600;
+			border-radius: 4px;
+			border: 1px solid var(--ink);
+			color: var(--ink);
+			transition: background .15s ease, color .15s ease, border-color .15s ease;
+		}
+		.btn:hover { background: var(--ink); color: var(--bg); }
+		.btn.ghost { border-color: var(--line); color: var(--muted); }
+		.btn.ghost:hover { border-color: var(--ink); color: var(--ink); background: transparent; }
+		.hero-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 26px; }
+		.hero-links a { font-weight: 600; font-size: .95rem; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+		.hero-links a:hover { color: var(--accent); border-color: var(--accent); }
 
-			/* ---------- Skills ---------- */
-			.skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-			.skill-group h3 {
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-weight: 900;
-				font-size: .85rem;
-				letter-spacing: .16em;
-				text-transform: uppercase;
-				color: #212931;
-				margin-bottom: 1.1rem;
-			}
-			.pills { display: flex; flex-wrap: wrap; gap: .55rem; }
-			.pill {
-				border: 1px solid #dde3e8;
-				border-radius: 999px;
-				background: #ffffff;
-				color: #3b4650;
-				padding: .5rem .95rem;
-				font-size: .88rem;
-				transition: border-color .2s ease, color .2s ease, transform .2s ease;
-			}
-			.pill:hover { border-color: #18bfef; color: #18bfef; transform: translateY(-2px); }
+		.term {
+			border: 1px solid var(--line);
+			border-radius: 6px;
+			background: #f3f2ef;
+			overflow: hidden;
+		}
+		.term-bar {
+			display: flex;
+			gap: 6px;
+			padding: 10px 14px;
+			border-bottom: 1px solid var(--line);
+			background: #ecebe7;
+		}
+		.term-bar span { width: 10px; height: 10px; border-radius: 50%; background: #c9c6bf; }
+		.term pre {
+			margin: 0;
+			padding: 16px 18px;
+			font-family: var(--mono);
+			font-size: .82rem;
+			line-height: 1.75;
+			color: #3a4149;
+			overflow-x: auto;
+		}
+		.term .dim { color: var(--faint); }
+		.term .ok { color: #16a34a; }
 
-			/* ---------- Build in public ---------- */
-			.bip {
-				border-radius: 20px;
-				padding: 3rem 2.5rem;
-				text-align: center;
-				color: #ffffff;
-				background: radial-gradient(120% 140% at 80% 0%, #1f2f57 0%, #0f172a 50%, #241a49 100%);
-			}
-			.bip .eyebrow { justify-content: center; color: #7dd3fc; }
-			.bip h3 { color: #ffffff; font-size: 2rem; line-height: 1.2; }
-			.bip p { color: #c6d2de; max-width: 42rem; margin: 1.1rem auto 1.9rem auto; line-height: 1.75; font-size: 1.05rem; }
-			.bip .actions { justify-content: center; }
-			.bip .button { box-shadow: inset 0 0 0 2px #18bfef; color: #ffffff !important; }
-			.bip .button:hover { box-shadow: inset 0 0 0 2px #8b5cf6; color: #a78bfa !important; }
-			.bip .button.primary { background: #ffffff; box-shadow: none; color: #1e252d !important; }
-			.bip .button.primary:hover { background: #18bfef; }
+		.stats {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 28px;
+			margin-top: 60px;
+			padding-top: 30px;
+			border-top: 1px solid var(--line);
+		}
+		.stat b { display: block; font-size: 1.85rem; font-weight: 700; letter-spacing: -.02em; }
+		.stat span { color: var(--muted); font-size: .9rem; line-height: 1.45; display: block; margin-top: 4px; }
 
-			/* ---------- Footer ---------- */
-			#footer .copyright { width: 100%; text-align: center; padding: 0 4rem 3rem 4rem; color: #909498; font-size: .85rem; }
+		/* ---------- Sections ---------- */
+		.sec { padding: 72px 0; }
+		.sec + .sec { border-top: 1px solid var(--line); }
+		.sec-head { margin-bottom: 36px; }
+		.sec-head h2 { font-size: 1.85rem; font-weight: 700; letter-spacing: -.015em; margin: 12px 0 0; max-width: 24ch; line-height: 1.2; }
+		.sec-head .lede { color: var(--muted); margin-top: 12px; max-width: 60ch; line-height: 1.7; }
 
-			/* ---------- Responsive ---------- */
-			@media screen and (max-width: 980px) {
-				.about-cols { grid-template-columns: 1fr; }
-				.stats { grid-template-columns: repeat(2, 1fr); }
-			}
-			@media screen and (max-width: 736px) {
-				.sec-head h2 { font-size: 1.9rem; }
-				.grid { grid-template-columns: 1fr; }
-				.research { grid-template-columns: 1fr; }
-				.skills { grid-template-columns: 1fr; }
-				.xp-when { margin-left: 0; width: 100%; }
-				.bip { padding: 2.2rem 1.5rem; }
-				.bip h3 { font-size: 1.6rem; }
-				#footer .copyright { padding: 0 1.5rem 2rem 1.5rem; }
-			}
-			@media screen and (max-width: 480px) {
-				.stats { grid-template-columns: 1fr 1fr; gap: .8rem; }
-				.stat b { font-size: 1.6rem; }
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+		/* ---------- Experience ---------- */
+		.xp > li { padding: 30px 0; border-top: 1px solid var(--line); }
+		.xp > li:last-child { border-bottom: 1px solid var(--line); }
+		.xp-head { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+		.xp-role { font-weight: 700; font-size: 1.18rem; }
+		.xp-org { color: var(--accent); font-weight: 600; }
+		.xp-when { margin-left: auto; color: var(--faint); font-size: .9rem; white-space: nowrap; }
+		.xp-where { width: 100%; color: var(--faint); font-size: .88rem; }
+		.xp-desc { color: var(--muted); margin-top: 12px; max-width: 72ch; }
+		.xp ul { margin-top: 14px; padding-left: 18px; list-style: disc; }
+		.xp ul li { color: var(--muted); line-height: 1.65; margin-bottom: 9px; max-width: 78ch; }
+		.xp ul li b { color: var(--ink); font-weight: 600; }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+		/* ---------- Work ---------- */
+		.project {
+			display: grid;
+			grid-template-columns: 250px 1fr;
+			gap: 30px;
+			align-items: start;
+			padding: 32px 0;
+			border-top: 1px solid var(--line);
+		}
+		.project:last-child { border-bottom: 1px solid var(--line); }
+		.project.featured { grid-template-columns: 330px 1fr; }
+		.project .thumb {
+			aspect-ratio: 16 / 10;
+			background: #efede8;
+			border: 1px solid var(--line);
+			overflow: hidden;
+		}
+		.project .thumb img { width: 100%; height: 100%; object-fit: cover; }
+		.project .thumb.text-thumb {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: var(--mono);
+			font-size: .78rem;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+			color: var(--faint);
+		}
+		.project .num { font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; color: var(--faint); }
+		.project h3 { font-size: 1.22rem; font-weight: 700; letter-spacing: -.01em; margin: 6px 0 8px; }
+		.project.featured h3 { font-size: 1.5rem; }
+		.project p { color: var(--muted); line-height: 1.65; max-width: 62ch; margin: 0; }
+		.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+		.tag {
+			font-family: var(--mono);
+			font-size: .7rem;
+			letter-spacing: .04em;
+			color: var(--muted);
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			padding: 4px 9px;
+		}
+		.project .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 16px; }
+		.project .links a { font-weight: 600; font-size: .9rem; color: var(--accent); border-bottom: 1px solid transparent; padding-bottom: 1px; }
+		.project .links a:hover { border-bottom-color: var(--accent); }
 
-				<!-- Intro -->
-					<div id="intro">
-						<span class="badge">AI Engineer II · LLM Systems · Multi-Agent Platforms</span>
-						<h1>Nikhil <span class="grad">Lamba</span></h1>
-						<p class="intro-lede">I build <strong>agentic AI that ships</strong> — production multi-agent systems, deep-learning pipelines, and useful little web apps that go live in public.</p>
-						<p class="intro-sub">
-							Right now I'm a <strong>Founding Engineer at Adopt AI</strong>, designing the orchestration, tooling, and evaluation layer behind a 60+ agent platform that completes <strong>1,000+ autonomous actions a month</strong>.
-							Off the clock, I'm an <strong>active open-source contributor in X.com's indie-hacking communities</strong> — I ship useful web apps over weekends for the fun of it, make them public on X (Twitter), and love sharing knowledge openly through threads and teardowns on <strong>X and LinkedIn</strong>.
-						</p>
-						<span class="now-pill"><span class="dot"></span> Building agentic AI right now</span>
-						<ul class="actions">
-							<li><a href="#projects" class="button primary icon solid fa-arrow-down scrolly">Explore my work</a></li>
-							<li><a href="mailto:lamba.nikhil24@gmail.com" class="button">Get in touch</a></li>
-						</ul>
-						<ul class="intro-icons">
-							<li><a href="https://github.com/NikhilLamba24" class="icon brands fa-github" title="GitHub"><span class="label">GitHub</span></a></li>
-							<li><a href="https://linkedin.com/in/nikhil-lamba-344448164" class="icon brands fa-linkedin" title="LinkedIn"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://x.com/NikhilLamba6" class="icon brands fa-twitter" title="X (Twitter)"><span class="label">X (Twitter)</span></a></li>
-							<li><a href="mailto:lamba.nikhil24@gmail.com" class="icon solid fa-envelope" title="Email"><span class="label">Email</span></a></li>
+		/* ---------- Research ---------- */
+		.pub { padding: 26px 0; border-top: 1px solid var(--line); }
+		.pub:last-child { border-bottom: 1px solid var(--line); }
+		.pub .kind { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+		.pub h3 { font-size: 1.16rem; font-weight: 700; margin: 8px 0 4px; }
+		.pub .venue { color: var(--muted); font-size: .92rem; }
+		.pub p { color: var(--muted); margin: 10px 0 0; max-width: 70ch; }
+		.pub .links { margin-top: 12px; }
+		.pub .links a { font-weight: 600; font-size: .9rem; color: var(--accent); border-bottom: 1px solid transparent; }
+		.pub .links a:hover { border-bottom-color: var(--accent); }
+
+		/* ---------- Building ---------- */
+		.building-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: start; }
+		.building-grid p { color: var(--muted); line-height: 1.75; max-width: 58ch; }
+		.building-grid .actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+		.building-grid .actions a { font-weight: 600; color: var(--accent); border-bottom: 1px solid transparent; }
+		.building-grid .actions a:hover { border-bottom-color: var(--accent); }
+
+		/* ---------- About ---------- */
+		.about-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: start; }
+		.bio p { color: var(--muted); line-height: 1.8; margin: 0 0 16px; max-width: 62ch; }
+		.about-side h3 {
+			font-family: var(--mono);
+			font-size: .72rem;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+			color: var(--faint);
+			margin: 0 0 10px;
+			font-weight: 600;
+		}
+		.about-side > div { margin-bottom: 28px; }
+		.about-side p { color: var(--muted); margin: 0; }
+		.toolkit { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); }
+		.toolkit h3 {
+			font-family: var(--mono);
+			font-size: .72rem;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+			color: var(--faint);
+			font-weight: 600;
+			margin: 0 0 14px;
+		}
+
+		/* ---------- Contact ---------- */
+		.contact h2 { font-size: 1.9rem; font-weight: 700; letter-spacing: -.015em; max-width: 20ch; line-height: 1.2; }
+		.contact .links { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 28px; }
+		.contact .links a { font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+		.contact .links a:hover { color: var(--accent); border-color: var(--accent); }
+		.contact .meta { color: var(--faint); font-size: .9rem; margin-top: 28px; }
+
+		/* ---------- Footer ---------- */
+		.site-foot { border-top: 1px solid var(--line); padding: 28px 0 40px; }
+		.site-foot .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; color: var(--faint); font-size: .88rem; }
+		.site-foot a { color: var(--muted); }
+		.site-foot a:hover { color: var(--ink); }
+
+		/* ---------- Motion ---------- */
+		main { animation: fade .5s ease both; }
+		@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			main { animation: none; }
+			* { transition: none !important; }
+		}
+
+		/* ---------- Responsive ---------- */
+		@media (max-width: 900px) {
+			.hero-grid, .building-grid, .about-grid { grid-template-columns: 1fr; gap: 36px; }
+			.term { max-width: 560px; }
+			.toolkit { grid-template-columns: 1fr; gap: 32px; }
+		}
+		@media (max-width: 720px) {
+			.nav, .head-links { display: none; }
+			.menu-btn { display: flex; }
+			.hero { padding: 56px 0 48px; }
+			.stats { grid-template-columns: 1fr 1fr; gap: 22px; }
+			.project, .project.featured { grid-template-columns: 1fr; gap: 18px; }
+			.xp-when { margin-left: 0; width: 100%; }
+			.sec { padding: 56px 0; }
+		}
+	</style>
+</head>
+<body>
+
+	<header class="site-head">
+		<input type="checkbox" id="menu" class="menu-check" />
+		<div class="inner">
+			<a class="brand" href="#top">Nik</a>
+			<nav class="nav" aria-label="Primary">
+				<a href="#experience">Experience</a>
+				<a href="#work">Work</a>
+				<a href="#research">Research</a>
+				<a href="#about">About</a>
+				<a href="#education">Education</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<div class="head-links">
+				<a href="https://github.com/NikhilLamba24">GitHub</a>
+				<a href="https://linkedin.com/in/nikhil-lamba-344448164">LinkedIn</a>
+			</div>
+			<label for="menu" class="menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+		</div>
+		<div class="mobile-nav">
+			<a href="#experience">Experience</a>
+			<a href="#work">Work</a>
+			<a href="#research">Research</a>
+			<a href="#about">About</a>
+			<a href="#education">Education</a>
+			<a href="#contact">Contact</a>
+			<a href="https://github.com/NikhilLamba24">GitHub</a>
+			<a href="https://linkedin.com/in/nikhil-lamba-344448164">LinkedIn</a>
+		</div>
+	</header>
+
+	<main>
+		<!-- Hero -->
+		<section class="hero" id="top">
+			<div class="wrap">
+				<div class="hero-grid">
+					<div class="hero-text">
+						<p class="kicker">AI Engineer · Agentic AI · LLM Systems · Computer Vision</p>
+						<h1>Nikhil Lamba</h1>
+						<p class="lede">Building AI systems that reason, act, and operate in production.</p>
+						<p class="sub">I work on agentic AI, LLM systems, multi-agent platforms, and deep-learning systems — from research and experimentation to production. I also build useful web apps over weekends, ship them publicly on X, and share what I learn as an active open-source contributor in X.com's indie-hacking communities.</p>
+						<p class="currently"><span class="dot"></span>Currently: Founding Engineer at Adopt AI</p>
+						<div class="hero-actions">
+							<a class="btn" href="#experience">View experience</a>
+							<a class="btn ghost" href="#work">Selected work</a>
+						</div>
+						<ul class="hero-links">
+							<li><a href="https://github.com/NikhilLamba24">GitHub</a></li>
+							<li><a href="https://linkedin.com/in/nikhil-lamba-344448164">LinkedIn</a></li>
+							<li><a href="https://x.com/NikhilLamba6">X</a></li>
+							<li><a href="https://www.reddit.com/user/Zoned_Mine48/submitted/">Reddit</a></li>
+							<li><a href="mailto:lamba.nikhil24@gmail.com">Email</a></li>
 						</ul>
 					</div>
+					<aside class="term" aria-hidden="true">
+						<div class="term-bar"><span></span><span></span><span></span></div>
+						<pre><span class="dim">$</span> agent.run(objective)
 
-				<!-- Header -->
-					<header id="header">
-						<a href="#intro" class="logo scrolly">NL</a>
-					</header>
+  plan   → 3 steps
+  tools  → playwright · omniparser
+  eval   → llm-as-judge gate
+  state  → <span class="ok">60+ agents live</span>
+  volume → <span class="ok">1,000+ actions/mo</span></pre>
+					</aside>
+				</div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="#about" class="scrolly">About</a></li>
-							<li><a href="#experience" class="scrolly">Experience</a></li>
-							<li><a href="#projects" class="scrolly">Projects</a></li>
-							<li><a href="#research" class="scrolly">Research</a></li>
-							<li><a href="#skills" class="scrolly">Skills</a></li>
-							<li><a href="#contact" class="scrolly">Contact</a></li>
+				<div class="stats">
+					<div class="stat"><b>60+</b><span>agents in production</span></div>
+					<div class="stat"><b>1,000+</b><span>successful autonomous actions / month</span></div>
+					<div class="stat"><b>6+</b><span>enterprise clients</span></div>
+					<div class="stat"><b>95%+</b><span>reduction in production regressions</span></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experience -->
+		<section class="sec" id="experience">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="kicker">Experience</span>
+					<h2>Where I've built and shipped.</h2>
+				</header>
+				<ul class="xp">
+					<li>
+						<div class="xp-head">
+							<span class="xp-role">Founding Engineer</span>
+							<span class="xp-org">Adopt AI</span>
+							<span class="xp-when">Mar 2025 — Present</span>
+							<span class="xp-where">Bengaluru, Karnataka, India · Agentic Platform &amp; Enterprise Workflow Automation</span>
+						</div>
+						<p class="xp-desc">Building a production multi-agent platform from the ground up for 6+ global enterprise clients — orchestration, tool calling, evaluation, and execution infrastructure. Led a team of 8 engineers.</p>
+						<ul>
+							<li><b>Multi-agent orchestration:</b> architected a custom Workflow Descriptive Language (WDL) and an "Uber Agents" routing harness scaling to 60+ autonomous agents and 1,000+ successful actions/month.</li>
+							<li><b>LLM-as-a-Judge evals:</b> benchmarked routing accuracy, tool-calling precision, and safety boundaries — cutting regressions by more than 95%.</li>
+							<li><b>Remote code execution:</b> shipped RCE as a core architecture shift, unlocking agent-to-agent autonomous behavior.</li>
+							<li><b>Enterprise integrations:</b> zero-human-in-the-loop agents across QuickBooks, Gmail, Google Drive, Plaid, and US Bank APIs (98% automation) with human-in-the-loop guards for sensitive actions; recovered $1.8M+ in annual billing leakage.</li>
+							<li><b>Self-healing SOQL:</b> built an NL-to-SOQL compiler with a 3-loop fallback that corrects syntax and logic errors at runtime.</li>
+							<li><b>DevEx:</b> a CLI toolchain that cut deployment latency 85% and accelerated delivery 4x.</li>
 						</ul>
-						<ul class="icons">
-							<li><a href="https://github.com/NikhilLamba24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="https://linkedin.com/in/nikhil-lamba-344448164" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://x.com/NikhilLamba6" class="icon brands fa-twitter"><span class="label">X (Twitter)</span></a></li>
+					</li>
+					<li>
+						<div class="xp-head">
+							<span class="xp-role">Tech Lead</span>
+							<span class="xp-org">HCLTech</span>
+							<span class="xp-when">Oct 2023 — Feb 2025</span>
+							<span class="xp-where">Chennai, India · Generative AI &amp; Multimodal Computer Vision</span>
+						</div>
+						<ul>
+							<li><b>Generative document restoration:</b> a CycleGAN pipeline on 15,000+ distorted words hitting 82% accuracy — the proof-of-concept secured a multi-year US enterprise contract.</li>
+							<li><b>Interactive object extraction:</b> cascaded Grounding DINO + Segment Anything Model (SAM) into a zero-shot system, cutting AWS EC2 memory use by 45% and eliminating memory leaks.</li>
+							<li><b>Spatial 3D reconstruction:</b> deployed COLMAP and InstantNGP for indoor reconstruction from monocular feeds with high-precision distance estimation.</li>
 						</ul>
-					</nav>
+					</li>
+					<li>
+						<div class="xp-head">
+							<span class="xp-role">AI &amp; ML Intern</span>
+							<span class="xp-org">Proxgy</span>
+							<span class="xp-when">Apr 2022 — Jun 2022</span>
+							<span class="xp-where">Gurugram, India</span>
+						</div>
+						<ul>
+							<li>Built an automated <b>vehicle-damage estimation</b> framework using instance segmentation, optimizing edge inference for real-time insurance repair-cost estimation.</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
 
-				<!-- Main -->
-					<div id="main">
+		<!-- Selected Work -->
+		<section class="sec" id="work">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="kicker">Selected Work</span>
+					<h2>Systems I've designed and shipped.</h2>
+					<p class="lede">Agentic systems, deep-learning pipelines, and the weekend web apps I build and publish in public.</p>
+				</header>
 
-						<!-- About -->
-						<section class="sec" id="about">
-							<header class="sec-head">
-								<span class="eyebrow">About</span>
-								<h2>Agentic AI, deep learning,<br />and a bias for shipping.</h2>
-							</header>
-							<div class="about-cols">
-								<div>
-									<p>I'm an AI engineer who fell for <b>deep learning</b> early — and never stopped. Today I work where LLMs meet real systems: <b>agentic AI</b> platforms that plan, call tools, self-correct, and get real work done end-to-end.</p>
-									<p>Over the last few years I've taken an agentic platform from zero to production for 6+ enterprise clients, led a team of eight engineers, published computer-vision research in Springer, and hold a patent on chest-radiograph classification.</p>
-									<p>And because I genuinely love the craft, my weekends are for building: small, <b>useful, AI-powered web apps — shipped publicly on X (Twitter)</b> for anyone to use and learn from. I'm an <b>active open-source contributor in X.com's indie-hacking communities</b>, and I believe good knowledge should be shared, not hoarded.</p>
-								</div>
-								<div class="now-card">
-									<h3><span class="dot"></span>What I'm doing now</h3>
-									<ul>
-										<li>Building orchestration + evaluation infrastructure for Adopt AI's multi-agent platform</li>
-										<li>Shipping weekend AI web apps in public on X (Twitter)</li>
-										<li>Contributing to open source and X.com's indie-hacking communities</li>
-										<li>Writing about LLM systems, agents, and deep learning on X and LinkedIn</li>
-									</ul>
-								</div>
-							</div>
-							<div class="stats">
-								<div class="stat"><b>60+</b><span>autonomous agents<br />in production</span></div>
-								<div class="stat"><b>1,000+</b><span>successful actions<br />per month</span></div>
-								<div class="stat"><b>$1.8M+</b><span>annual billing leakage<br />recovered</span></div>
-								<div class="stat"><b>95%+</b><span>fewer production<br />regressions</span></div>
-							</div>
-						</section>
-
-						<!-- Experience -->
-						<section class="sec" id="experience">
-							<header class="sec-head">
-								<span class="eyebrow">Experience</span>
-								<h2>Where I've built and shipped.</h2>
-							</header>
-							<ul class="xp">
-								<li>
-									<div class="xp-head">
-										<span class="xp-role">Founding Engineer</span>
-										<span class="xp-org">Adopt AI</span>
-										<span class="xp-when">Present</span>
-										<span class="xp-where">Bengaluru, India · Agentic Platform &amp; Enterprise Workflow Automation</span>
-									</div>
-									<p class="xp-desc">Building a production multi-agent platform from the ground up for 6+ global enterprise clients — orchestration, tool calling, evals, and execution infrastructure. Led a team of 8 engineers.</p>
-									<ul>
-										<li><b>Multi-agent orchestration:</b> architected a custom Workflow Descriptive Language (WDL) and an "Uber Agents" routing harness scaling to 60+ autonomous agents and 1,000+ successful actions/month.</li>
-										<li><b>LLM-as-a-Judge evals:</b> benchmarked routing accuracy, tool-calling precision, and safety boundaries — cutting regressions by more than 95%.</li>
-										<li><b>Remote code execution:</b> shipped RCE as a core architecture shift, unlocking agent-to-agent autonomous behavior.</li>
-										<li><b>Enterprise integrations:</b> zero-human-in-the-loop agents across QuickBooks, Gmail, Google Drive, Plaid, and US Bank APIs (98% automation) with human-in-the-loop guards for sensitive actions.</li>
-										<li><b>Self-healing SOQL:</b> built an NL-to-SOQL compiler with a 3-loop fallback that corrects syntax and logic errors at runtime.</li>
-										<li><b>DevEx:</b> a CLI toolchain that cut deployment latency 85% and accelerated delivery 4x.</li>
-									</ul>
-								</li>
-								<li>
-									<div class="xp-head">
-										<span class="xp-role">Tech Lead</span>
-										<span class="xp-org">HCLTech</span>
-										<span class="xp-when">Oct 2023 – Feb 2025</span>
-										<span class="xp-where">Chennai, India · Generative AI &amp; Multimodal Computer Vision</span>
-									</div>
-									<ul>
-										<li><b>Generative document restoration:</b> a CycleGAN pipeline on 15,000+ distorted words hitting 82% accuracy — the proof-of-concept secured a multi-year US enterprise contract.</li>
-										<li><b>Interactive object extraction:</b> cascaded Grounding DINO + Segment Anything Model (SAM) into a zero-shot system, cutting AWS EC2 memory use by 45% and eliminating memory leaks.</li>
-										<li><b>Spatial 3D reconstruction:</b> deployed COLMAP and InstantNGP for indoor reconstruction from monocular feeds with high-precision distance estimation.</li>
-									</ul>
-								</li>
-								<li>
-									<div class="xp-head">
-										<span class="xp-role">AI &amp; ML Intern</span>
-										<span class="xp-org">Proxgy</span>
-										<span class="xp-when">Apr 2022 – Jun 2022</span>
-										<span class="xp-where">Gurugram, India</span>
-									</div>
-									<ul>
-										<li>Built an automated <b>vehicle-damage estimation</b> framework using instance segmentation, optimizing edge inference for real-time insurance repair-cost estimation.</li>
-									</ul>
-								</li>
-							</ul>
-						</section>
-
-						<!-- Projects -->
-						<section class="sec" id="projects">
-							<header class="sec-head">
-								<span class="eyebrow">Projects</span>
-								<h2>Things I've shipped.</h2>
-								<p class="lede">Agentic systems, deep-learning pipelines, and the weekend web apps I build for fun and publish in public.</p>
-							</header>
-							<div class="grid">
-
-								<article class="proj">
-									<div class="thumb"><img loading="lazy" src="images/omni_dino.png" alt="Vision heavy GUI auth agent" /></div>
-									<div class="body">
-										<h3>Vision heavy GUI auth agent</h3>
-										<p>An LLM-driven, end-to-end agentic harness that drives the browser using Playwright + OmniParser, with self-correcting execution paths, safety guardrails, and human-in-the-loop fallbacks.</p>
-										<div class="tags"><span class="tag">Playwright</span><span class="tag">OmniParser</span><span class="tag">Qwen</span><span class="tag">Pydantic</span><span class="tag">LangGraph</span></div>
-										<div class="links">
-											<a href="https://github.com/NikhilLamba24/auto_ui">GitHub</a>
-											<a href="https://www.loom.com/share/01fb7c0289d8420f8ae724aad0a6d165">Watch demo</a>
-										</div>
-									</div>
-								</article>
-
-								<article class="proj">
-									<div class="thumb"><img loading="lazy" src="images/storyboard.png" alt="Collaborative Image Editing for Storyboards" /></div>
-									<div class="body">
-										<h3>Collaborative Image Editing for Storyboards</h3>
-										<p>A collaborative image-editing workflow for storyboards — multiple creators shaping and iterating on frames together in real time.</p>
-										<div class="tags"><span class="tag">Collaborative Editing</span><span class="tag">Storyboards</span></div>
-										<div class="links">
-											<a href="https://superbrain-assign.vercel.app/">Live project</a>
-											<a href="https://github.com/NikhilLamba24/superbrain_assign">GitHub</a>
-											<a href="https://drive.google.com/file/d/14GmLtV64usOlRTiM47MTFiV45qFWgRSa/view?usp=sharing">Watch demo</a>
-										</div>
-									</div>
-								</article>
-
-								<article class="proj">
-									<div class="thumb"><img loading="lazy" src="poses.gif" alt="3D soccer scene estimation" /></div>
-									<div class="body">
-										<h3>Soccer Scene Understanding &amp; 3D Volumetrics</h3>
-										<p>A 3D scene-estimation pipeline built from monocular soccer broadcasts — custom synthetic datasets captured via modified GPU passes, with Detectron and OpenPose skeletal tracking.</p>
-										<div class="tags"><span class="tag">Detectron</span><span class="tag">OpenPose</span><span class="tag">Computer Vision</span><span class="tag">3D</span></div>
-										<div class="links">
-											<a href="https://github.com/NikhilLamba24/Computer-Vision-repos">GitHub</a>
-										</div>
-									</div>
-								</article>
-
-								<article class="proj">
-									<div class="thumb"><img loading="lazy" src="trac.gif" alt="Object tracking by detection" /></div>
-									<div class="body">
-										<h3>Object Tracking by Detection</h3>
-										<p>Deep-learning (YOLOv5 + DeepSORT) and OpenCV trackers, benchmarked head-to-head with quantitative accuracy metrics and graphs for real-time tracking scenarios.</p>
-										<div class="tags"><span class="tag">YOLOv5</span><span class="tag">DeepSORT</span><span class="tag">OpenCV</span><span class="tag">pandas</span></div>
-										<div class="links">
-											<a href="https://github.com/NikhilLamba24/Trackers_comparison">GitHub</a>
-										</div>
-									</div>
-								</article>
-
-								<article class="proj">
-									<div class="thumb"><img loading="lazy" src="images/xraypicworking.PNG" alt="Chest X-ray classification app" /></div>
-									<div class="body">
-										<h3>Lungs Virus Classification App</h3>
-										<p>A Flask web app with a CNN that classifies chest X-rays as Viral Pneumonia, Bacterial Pneumonia, or Normal — with the infected region highlighted.</p>
-										<div class="tags"><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">Flask</span><span class="tag">Linode</span></div>
-										<div class="links">
-											<a href="https://github.com/NikhilLamba24/Cisco-Meraki-Hackathon">GitHub</a>
-										</div>
-									</div>
-								</article>
-
-								<article class="proj">
-									<div class="thumb"><img loading="lazy" src="images/Quarantine%20buddies.jfif" alt="Contactless disease prediction" /></div>
-									<div class="body">
-										<h3>Contactless Disease Prediction</h3>
-										<p>A quarantine-era backend that maps two self-reported symptoms to five likely diseases, ranked by severity, using an ANN.</p>
-										<div class="tags"><span class="tag">Python</span><span class="tag">ANN</span><span class="tag">Web Crawling</span></div>
-										<div class="links">
-											<a href="https://github.com/NikhilLamba24/SolLife">GitHub</a>
-										</div>
-									</div>
-								</article>
-
-								<article class="proj">
-									<div class="visual"><span class="icon solid fa-rocket"></span></div>
-									<div class="body">
-										<h3>Weekend Builds — shipped in public</h3>
-										<p>Small, useful AI web apps built over weekends for the pure joy of shipping — every one of them made public on X (Twitter) so the community can use and learn from them.</p>
-										<div class="tags"><span class="tag">Agentic AI</span><span class="tag">Web Apps</span><span class="tag">Indie Hacking</span></div>
-										<div class="links">
-											<a href="https://github.com/NikhilLamba24">GitHub</a>
-											<a href="https://x.com/NikhilLamba6">Follow on X</a>
-										</div>
-									</div>
-								</article>
-
-							</div>
-						</section>
-
-						<!-- Research -->
-						<section class="sec" id="research">
-							<header class="sec-head">
-								<span class="eyebrow">Research</span>
-								<h2>Papers, patents &amp; proofs.</h2>
-							</header>
-							<div class="research">
-								<div class="rs">
-									<span class="kind">Journal · Springer · Sep 2024</span>
-									<h3>Single Object Tracking under Variable Haze</h3>
-									<p>Benchmarked YOLOv7, SORT, and SiamBAN under synthetic haze degradation, published in Springer's Multimedia Tools and Applications.</p>
-								<div class="links"><a href="https://link.springer.com/article/10.1007/s11042-024-19997-w">Read the paper</a></div>
-								</div>
-								<div class="rs">
-									<span class="kind">Patent · Indian Patent Office · Jul 2021</span>
-									<h3>SARS-CoV-2 Classification via Chest Radiograph</h3>
-									<p>Granted patent (202111030911A) for deep-learning classification of chest radiographs — the full patent document is available on GitHub.</p>
-									<div class="links"><a href="https://github.com/NikhilLamba24/Intellectual_work/blob/main/Patent.pdf">Read the patent</a></div>
-								</div>
-							</div>
-						</section>
-
-						<!-- Skills -->
-						<section class="sec" id="skills">
-							<header class="sec-head">
-								<span class="eyebrow">Skills</span>
-								<h2>My working toolkit.</h2>
-							</header>
-							<div class="skills">
-								<div class="skill-group">
-									<h3>Core AI</h3>
-									<div class="pills">
-										<span class="pill">Large Language Models (LLMs)</span>
-										<span class="pill">AI Agents</span>
-										<span class="pill">Voice AI Agents</span>
-										<span class="pill">Agentic Harness Rulesets</span>
-										<span class="pill">RAG</span>
-										<span class="pill">Vector Databases (Qdrant, Pinecone)</span>
-										<span class="pill">VLM Fine-Tuning (LoRA, DPO)</span>
-										<span class="pill">Computer Vision</span>
-										<span class="pill">GANs</span>
-										<span class="pill">LLM Gateway &amp; Observability (TrueFoundry)</span>
-									</div>
-								</div>
-								<div class="skill-group">
-									<h3>Tools &amp; Platforms</h3>
-									<div class="pills">
-										<span class="pill">Python</span>
-										<span class="pill">FastAPI</span>
-										<span class="pill">LangChain</span>
-										<span class="pill">LangGraph</span>
-										<span class="pill">CrewAI</span>
-										<span class="pill">LiveKit</span>
-										<span class="pill">vLLM</span>
-										<span class="pill">Playwright</span>
-										<span class="pill">AWS (EC2, S3)</span>
-										<span class="pill">SQL</span>
-										<span class="pill">Git</span>
-										<span class="pill">Docker</span>
-										<span class="pill">Azure</span>
-										<span class="pill">PyTorch</span>
-										<span class="pill">TensorFlow</span>
-										<span class="pill">OpenCV</span>
-									</div>
-								</div>
-							</div>
-						</section>
-
-						<!-- Build in public -->
-						<section class="sec">
-							<div class="bip">
-								<span class="eyebrow">Build in public</span>
-								<h3>I ship in public — and share everything I learn.</h3>
-								<p>I'm an active contributor in X.com's indie-hacking communities. Every weekend, I build a small, useful AI web app for the fun of it and publish it openly on X (Twitter), alongside threads and teardowns on X and LinkedIn.</p>
-								<ul class="actions">
-									<li><a href="https://github.com/NikhilLamba24" class="button primary">See my GitHub</a></li>
-									<li><a href="https://x.com/NikhilLamba6" class="button">Follow my builds on X</a></li>
-								</ul>
-							</div>
-						</section>
-
+				<article class="project featured">
+					<div class="thumb"><img loading="lazy" src="images/omni_dino.png" alt="Vision Heavy GUI Auth Agent" /></div>
+					<div>
+						<div class="num">01</div>
+						<h3>Vision Heavy GUI Auth Agent</h3>
+						<p>LLM-driven browser automation using Playwright + OmniParser, with self-correcting execution, safety guardrails, and human-in-the-loop fallbacks.</p>
+						<div class="tags"><span class="tag">Playwright</span><span class="tag">OmniParser</span><span class="tag">Qwen</span><span class="tag">Pydantic</span><span class="tag">LangGraph</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/auto_ui">GitHub</a>
+							<a href="https://www.loom.com/share/01fb7c0289d8420f8ae724aad0a6d165">Watch demo</a>
+						</div>
 					</div>
+				</article>
 
-				<!-- Footer -->
-					<footer id="footer" class="alt">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>Hisar, Haryana, India</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="tel:+918930930530">(+91) 8930930530</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:lamba.nikhil24@gmail.com">lamba.nikhil24@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Elsewhere</h3>
-								<ul class="icons alt">
-									<li><a href="https://github.com/NikhilLamba24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://linkedin.com/in/nikhil-lamba-344448164" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://x.com/NikhilLamba6" class="icon brands fa-twitter"><span class="label">X (Twitter)</span></a></li>
-								</ul>
-							</section>
-						</section>
-						<div id="contact" class="copyright">© Nikhil Lamba · Agentic AI &amp; Deep Learning</div>
-					</footer>
+				<article class="project featured">
+					<div class="thumb"><img loading="lazy" src="images/storyboard.png" alt="Collaborative Image Editing for Storyboards" /></div>
+					<div>
+						<div class="num">02</div>
+						<h3>Collaborative Image Editing for Storyboards</h3>
+						<p>A collaborative image-editing workflow for storyboards — multiple creators shaping and iterating on frames together in real time.</p>
+						<div class="tags"><span class="tag">Collaborative Editing</span><span class="tag">Storyboards</span></div>
+						<div class="links">
+							<a href="https://superbrain-assign.vercel.app/">Live project</a>
+							<a href="https://github.com/NikhilLamba24/superbrain_assign">GitHub</a>
+							<a href="https://drive.google.com/file/d/14GmLtV64usOlRTiM47MTFiV45qFWgRSa/view?usp=sharing">Watch demo</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="poses.gif" alt="3D soccer scene estimation" /></div>
+					<div>
+						<div class="num">03</div>
+						<h3>Soccer Scene Understanding &amp; 3D Volumetrics</h3>
+						<p>3D scene estimation from monocular soccer broadcasts — novel videogame-derived datasets via GPU cycle alteration, a faster pipeline for monocular depth generation, and Detectron + OpenPose skeletal tracking.</p>
+						<div class="tags"><span class="tag">Detectron</span><span class="tag">OpenPose</span><span class="tag">Computer Vision</span><span class="tag">3D</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/Computer-Vision-repos">GitHub</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="images/interactive_segmentation.png" alt="Interactive Scene Segmentation, A Prompt Centric Approach" /></div>
+					<div>
+						<div class="num">04</div>
+						<h3>Interactive Scene Segmentation, A Prompt Centric Approach</h3>
+						<p>One-shot interactive segmentation: an end-to-end pipeline spanning prompt input, object detection, and pixel-level segmentation for image editing.</p>
+						<div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">AWS EC2</span><span class="tag">Grounding DINO</span><span class="tag">SAM</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/generative_section/tree/main/Grounding_SAM">GitHub</a>
+							<a href="https://drive.google.com/file/d/1qx_FaK7GCvYDj3CCSLC07zJlmrSgxbor/view?usp=sharing">Watch demo</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="trac.gif" alt="Object tracking by detection" /></div>
+					<div>
+						<div class="num">05</div>
+						<h3>Object Tracking by Detection</h3>
+						<p>YOLOv5 + DeepSORT and OpenCV trackers benchmarked head-to-head with quantitative accuracy metrics for real-time scenarios.</p>
+						<div class="tags"><span class="tag">YOLOv5</span><span class="tag">DeepSORT</span><span class="tag">OpenCV</span><span class="tag">pandas</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/Trackers_comparison">GitHub</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="images/haze_tracking_gif.gif" alt="Synthetic Haze Generation and Tracker's Analysis" /></div>
+					<div>
+						<div class="num">06</div>
+						<h3>Synthetic Haze Generation and Tracker's Analysis</h3>
+						<p>Synthetic haze dataset creation and validation of state-of-the-art trackers for autonomous vehicles and UAVs operating in degraded visibility.</p>
+						<div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">OpenCV</span><span class="tag">YOLOv7</span><span class="tag">SORT</span><span class="tag">StrongSORT</span><span class="tag">SiamBAN</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/Sytnthetic_data_and_tracking">GitHub</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="images/broken_image_reconstruction.png" alt="Broken Image Reconstruction" /></div>
+					<div>
+						<div class="num">07</div>
+						<h3>Broken Image Reconstruction</h3>
+						<p>Reconstruction of old, crushed, or broken documents using modified GAN weights — built on a custom dataset (none existed publicly) and a customized conditional GAN architecture.</p>
+						<div class="tags"><span class="tag">Python</span><span class="tag">GAN</span><span class="tag">Scanning Hardware</span><span class="tag">Internal Project</span></div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="images/xraypicworking.PNG" alt="Chest X-ray classification app" /></div>
+					<div>
+						<div class="num">08</div>
+						<h3>Virus Lungs Classification App</h3>
+						<p>A Flask web app with a CNN that classifies chest X-rays as Viral Pneumonia, Bacterial Pneumonia, or Normal — with the infected region highlighted.</p>
+						<div class="tags"><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">Flask</span><span class="tag">Linode</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/Cisco-Meraki-Hackathon">GitHub</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="thumb"><img loading="lazy" src="images/Quarantine%20buddies.jfif" alt="Contactless disease prediction" /></div>
+					<div>
+						<div class="num">09</div>
+						<h3>Contactless Disease Prediction</h3>
+						<p>A quarantine-era backend that maps two self-reported symptoms to five likely diseases, ranked by severity, using an ANN.</p>
+						<div class="tags"><span class="tag">Python</span><span class="tag">ANN</span><span class="tag">Web Crawling</span></div>
+						<div class="links">
+							<a href="https://github.com/NikhilLamba24/SolLife">GitHub</a>
+						</div>
+					</div>
+				</article>
+
 
 			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Research -->
+		<section class="sec" id="research">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="kicker">Research</span>
+					<h2>Papers &amp; patents.</h2>
+				</header>
 
-	</body>
+				<div class="pub">
+					<div class="kind">Journal · Springer · 2024</div>
+					<h3>Single Object Tracking under Variable Haze</h3>
+					<div class="venue">Multimedia Tools and Applications</div>
+					<p>Benchmarked YOLOv7, SORT, and SiamBAN under synthetic haze degradation.</p>
+					<div class="links"><a href="https://link.springer.com/article/10.1007/s11042-024-19997-w">Read the paper</a></div>
+				</div>
+
+				<div class="pub">
+					<div class="kind">Conference · ICDAIC · 2023</div>
+					<h3>Faster Pipeline for Depth Generation of Soccer Players</h3>
+					<div class="venue">N. Lamba, S. Singh, A. Khosla</div>
+					<p>Faster pipeline for monocular depth generation of soccer players, presented at the 2023 ICDAIC conference.</p>
+				</div>
+
+				<div class="pub">
+					<div class="kind">Patent · Indian Patent Office · 2021</div>
+					<h3>SARS-CoV-2 Classification via Chest Radiograph</h3>
+					<div class="venue">Application No. 202111030911A</div>
+					<p>Deep-learning classification of chest radiographs.</p>
+					<div class="links"><a href="https://github.com/NikhilLamba24/Intellectual_work/blob/main/Patent.pdf">Read the patent</a></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Building in public -->
+		<section class="sec" id="building">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="kicker">Building in public</span>
+					<h2>Shipped in public, with the lessons attached.</h2>
+				</header>
+				<div class="building-grid">
+					<div>
+						<p>I regularly build small AI products and engineering experiments outside of work, and share the implementation and the lessons publicly. Most weekends, I ship a small, useful AI web app and publish it on X, with threads and teardowns on X and LinkedIn.</p>
+						<div class="tags">
+							<span class="tag">Agentic AI</span>
+							<span class="tag">LLM systems</span>
+							<span class="tag">AI infrastructure</span>
+							<span class="tag">Deep learning</span>
+							<span class="tag">Engineering teardowns</span>
+						</div>
+					</div>
+					<div class="actions">
+						<a href="https://github.com/NikhilLamba24">GitHub</a>
+						<a href="https://x.com/NikhilLamba6">X</a>
+						<a href="https://www.reddit.com/user/Zoned_Mine48/submitted/">Reddit</a>
+						<a href="https://linkedin.com/in/nikhil-lamba-344448164">LinkedIn</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About -->
+		<section class="sec" id="about">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="kicker">About</span>
+					<h2>An engineer at the boundary of research and production.</h2>
+				</header>
+				<div class="about-grid">
+					<div class="bio">
+						<p>I'm an AI engineer focused on building intelligent systems that operate reliably in the real world. My work spans agentic AI, LLM systems, computer vision, and deep learning — across production multi-agent platforms, enterprise automation, multimodal systems, and published research.</p>
+						<p>I enjoy working at the boundary between research and engineering: taking ideas that work in a notebook and turning them into systems people can actually use. Outside work, I build small AI products and engineering experiments, ship them publicly on X, and contribute to X.com's indie-hacking and open-source communities.</p>
+					</div>
+					<div class="about-side">
+						<div>
+							<h3>Technical interests</h3>
+							<div class="tags">
+								<span class="tag">Agentic AI</span>
+								<span class="tag">LLM Systems</span>
+								<span class="tag">Multi-Agent Architecture</span>
+								<span class="tag">Evaluation &amp; Reliability</span>
+								<span class="tag">Computer Vision</span>
+								<span class="tag">Multimodal AI</span>
+								<span class="tag">AI Infrastructure</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="toolkit">
+					<div>
+						<h3>Core AI</h3>
+						<div class="tags">
+							<span class="tag">Large Language Models (LLMs)</span>
+							<span class="tag">AI Agents</span>
+							<span class="tag">Voice AI Agents</span>
+							<span class="tag">Agentic Harness Rulesets</span>
+							<span class="tag">RAG</span>
+							<span class="tag">Vector Databases (Qdrant, Pinecone)</span>
+							<span class="tag">VLM Fine-Tuning (LoRA, DPO)</span>
+							<span class="tag">Computer Vision</span>
+							<span class="tag">GANs</span>
+							<span class="tag">LLM Gateway &amp; Observability (TrueFoundry)</span>
+						</div>
+					</div>
+					<div>
+						<h3>Tools &amp; Platforms</h3>
+						<div class="tags">
+							<span class="tag">Python</span>
+							<span class="tag">FastAPI</span>
+							<span class="tag">LangChain</span>
+							<span class="tag">LangGraph</span>
+							<span class="tag">CrewAI</span>
+							<span class="tag">LiveKit</span>
+							<span class="tag">vLLM</span>
+							<span class="tag">Playwright</span>
+							<span class="tag">AWS (EC2, S3)</span>
+							<span class="tag">SQL</span>
+							<span class="tag">Git</span>
+							<span class="tag">Docker</span>
+							<span class="tag">Azure</span>
+							<span class="tag">PyTorch</span>
+							<span class="tag">TensorFlow</span>
+							<span class="tag">OpenCV</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Education -->
+		<section class="sec" id="education">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="kicker">Education</span>
+					<h2>Formal training.</h2>
+				</header>
+				<ul class="xp">
+					<li>
+						<div class="xp-head">
+							<span class="xp-role">M.Tech — Artificial Intelligence</span>
+							<span class="xp-org">NIT Jalandhar</span>
+							<span class="xp-when">Aug 2021 — Aug 2023</span>
+							<span class="xp-where">Jalandhar, India</span>
+						</div>
+						<p class="xp-desc">CGPA 8.86/10 · Specialization: Deep Learning, Computer Vision &amp; Advanced AI Algorithms.</p>
+					</li>
+					<li>
+						<div class="xp-head">
+							<span class="xp-role">B.Tech — Computer Science &amp; Engineering</span>
+							<span class="xp-org">SRM University, Delhi-NCR</span>
+							<span class="xp-when">Aug 2017 — Jul 2021</span>
+							<span class="xp-where">Sonepat, India</span>
+						</div>
+						<p class="xp-desc">CGPA 8.67/10 · Gold Medalist (Ranked 1st in Department overall).</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section class="sec contact" id="contact">
+			<div class="wrap">
+				<h2>Interested in working on difficult AI systems?</h2>
+				<div class="links">
+					<a href="mailto:lamba.nikhil24@gmail.com">Email</a>
+					<a href="https://linkedin.com/in/nikhil-lamba-344448164">LinkedIn</a>
+					<a href="https://github.com/NikhilLamba24">GitHub</a>
+					<a href="https://x.com/NikhilLamba6">X</a>
+					<a href="https://www.reddit.com/user/Zoned_Mine48/submitted/">Reddit</a>
+				</div>
+				<p class="meta">Bengaluru, Karnataka, India · <a href="tel:+918930930530">(+91) 8930930530</a> · <a href="mailto:lamba.nikhil24@gmail.com">lamba.nikhil24@gmail.com</a></p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-foot">
+		<div class="wrap">
+			<span>© Nikhil Lamba · AI Engineer — Agentic AI &amp; Deep Learning</span>
+			<a href="https://github.com/NikhilLamba24">GitHub</a>
+			<a href="https://linkedin.com/in/nikhil-lamba-344448164">LinkedIn</a>
+			<a href="https://x.com/NikhilLamba6">X</a>
+			<a href="https://www.reddit.com/user/Zoned_Mine48/submitted/">Reddit</a>
+		</div>
+	</footer>
+
+	<script>
+		(function () {
+			var navLinks = document.querySelectorAll('.nav a[href^="#"]');
+			var sections = [];
+			navLinks.forEach(function (a) {
+				var s = document.querySelector(a.getAttribute('href'));
+				if (s) sections.push({ a: a, s: s });
+			});
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					navLinks.forEach(function (a) { a.classList.remove('active'); });
+					var hit = sections.filter(function (x) { return x.s === entry.target; })[0];
+					if (hit) hit.a.classList.add('active');
+				});
+			}, { rootMargin: '-40% 0px -55% 0px' });
+			sections.forEach(function (x) { observer.observe(x.s); });
+
+			document.querySelectorAll('.mobile-nav a').forEach(function (a) {
+				a.addEventListener('click', function () {
+					document.getElementById('menu').checked = false;
+				});
+			});
+		})();
+	</script>
+</body>
 </html>
