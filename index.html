@@ -317,6 +317,93 @@
 			* { transition: none !important; }
 		}
 
+		/* ---------- Project More Drawer ---------- */
+		.more-btn {
+			margin-left: auto;
+			align-self: center;
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			font-family: var(--mono);
+			font-size: .7rem;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+			color: var(--accent);
+			background: none;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			padding: 6px 12px;
+			cursor: pointer;
+			transition: border-color .15s ease, background .15s ease;
+		}
+		.more-btn:hover { border-color: var(--accent); background: rgba(37, 99, 235, .05); }
+		.more-btn .arrow { display: inline-block; transition: transform .2s ease; }
+		.more-btn:hover .arrow { transform: translateX(3px); }
+
+		.drawer-backdrop {
+			position: fixed;
+			inset: 0;
+			z-index: 90;
+			background: rgba(23, 24, 26, .35);
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity .25s ease;
+		}
+		.drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+
+		.more-drawer {
+			position: fixed;
+			top: 0;
+			right: 0;
+			z-index: 100;
+			height: 100vh;
+			width: min(430px, 94vw);
+			background: var(--surface);
+			border-left: 1px solid var(--line);
+			box-shadow: -30px 0 60px -30px rgba(23, 24, 26, .45);
+			transform: translateX(105%);
+			transition: transform .3s cubic-bezier(.22, .61, .36, 1);
+			padding: 28px 26px 44px;
+			overflow-y: auto;
+		}
+		.more-drawer.open { transform: translateX(0); }
+
+		.more-drawer .drawer-head {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 18px;
+			margin-bottom: 6px;
+		}
+		.more-drawer .drawer-title { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.25; }
+		.more-drawer .drawer-close {
+			flex: none;
+			width: 32px;
+			height: 32px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background: none;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			color: var(--muted);
+			cursor: pointer;
+			font-size: 1.05rem;
+			line-height: 1;
+		}
+		.more-drawer .drawer-close:hover { border-color: var(--ink); color: var(--ink); }
+		.more-drawer .drawer-block { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 12px; }
+		.more-drawer .drawer-block h4 {
+			font-family: var(--mono);
+			font-size: .68rem;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+			color: var(--faint);
+			font-weight: 600;
+			margin: 0 0 6px;
+		}
+		.more-drawer .drawer-block p { color: var(--muted); font-size: .95rem; line-height: 1.7; margin: 0; }
+
 		/* ---------- Responsive ---------- */
 		@media (max-width: 900px) {
 			.hero-grid, .building-grid, .about-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -482,6 +569,7 @@
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/auto_ui">GitHub</a>
 							<a href="https://www.loom.com/share/01fb7c0289d8420f8ae724aad0a6d165">Watch demo</a>
+							<button class="more-btn" type="button" data-title="Vision Heavy GUI Auth Agent" data-target="Automate vision-heavy browser workflows" data-usage="LLM-driven browser automation with self-correcting execution" data-contrib="End-to-end agentic harness with Playwright + OmniParser, safety guardrails, and human-in-the-loop fallbacks">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -497,6 +585,7 @@
 							<a href="https://superbrain-assign.vercel.app/">Live project</a>
 							<a href="https://github.com/NikhilLamba24/superbrain_assign">GitHub</a>
 							<a href="https://drive.google.com/file/d/14GmLtV64usOlRTiM47MTFiV45qFWgRSa/view?usp=sharing">Watch demo</a>
+							<button class="more-btn" type="button" data-title="Collaborative Image Editing for Storyboards" data-target="Storyboard teams and creators" data-usage="Collaborative image editing and frame iteration in real time" data-contrib="Built a collaborative image-editing workflow for storyboards">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -510,6 +599,7 @@
 						<div class="tags"><span class="tag">Detectron</span><span class="tag">OpenPose</span><span class="tag">Computer Vision</span><span class="tag">3D</span></div>
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/Computer-Vision-repos">GitHub</a>
+							<button class="more-btn" type="button" data-title="Soccer Scene Understanding &amp; 3D Volumetrics" data-target="Soccer clubs and end users (augmented and extended reality fans)" data-usage="Watch soccer at any scale, like being present in the stadium" data-contrib="Novel dataset creation from a videogame via GPU cycle alteration; faster pipeline for monocular depth generation of players">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -524,6 +614,7 @@
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/generative_section/tree/main/Grounding_SAM">GitHub</a>
 							<a href="https://drive.google.com/file/d/1qx_FaK7GCvYDj3CCSLC07zJlmrSgxbor/view?usp=sharing">Watch demo</a>
+							<button class="more-btn" type="button" data-title="Interactive Scene Segmentation, A Prompt Centric Approach" data-target="One-time interactive prompt segmentation" data-usage="Image editing and pixel-level segmentation" data-contrib="End-to-end pipeline covering prompt entering, object detection, and segmentation">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -537,6 +628,7 @@
 						<div class="tags"><span class="tag">YOLOv5</span><span class="tag">DeepSORT</span><span class="tag">OpenCV</span><span class="tag">pandas</span></div>
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/Trackers_comparison">GitHub</a>
+							<button class="more-btn" type="button" data-title="Object Tracking by Detection" data-target="Real-time tracking scenarios" data-usage="Track objects by detection with benchmarked accuracy metrics" data-contrib="Benchmarked YOLOv5 + DeepSORT and OpenCV trackers head-to-head">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -550,6 +642,7 @@
 						<div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">OpenCV</span><span class="tag">YOLOv7</span><span class="tag">SORT</span><span class="tag">StrongSORT</span><span class="tag">SiamBAN</span></div>
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/Sytnthetic_data_and_tracking">GitHub</a>
+							<button class="more-btn" type="button" data-title="Synthetic Haze Generation and Tracker's Analysis" data-target="Autonomous cars and UAVs that must track in haze" data-usage="Autonomous vehicles using cameras as the integral sensor" data-contrib="Synthetic dataset creation and validation of state-of-the-art architectures">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -561,6 +654,9 @@
 						<h3>Broken Image Reconstruction</h3>
 						<p>Reconstruction of old, crushed, or broken documents using modified GAN weights — built on a custom dataset (none existed publicly) and a customized conditional GAN architecture.</p>
 						<div class="tags"><span class="tag">Python</span><span class="tag">GAN</span><span class="tag">Scanning Hardware</span><span class="tag">Internal Project</span></div>
+						<div class="links">
+							<button class="more-btn" type="button" data-title="Broken Image Reconstruction" data-target="Old documents and images in bad condition (crushed or broken)" data-usage="Reconstruction of old documents using modified GAN weights" data-contrib="Dataset creation (no previous dataset on the internet) and customization of a conditional GAN architecture; internal project">More <span class="arrow">→</span></button>
+						</div>
 					</div>
 				</article>
 
@@ -573,6 +669,7 @@
 						<div class="tags"><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">Flask</span><span class="tag">Linode</span></div>
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/Cisco-Meraki-Hackathon">GitHub</a>
+							<button class="more-btn" type="button" data-title="Virus Lungs Classification App" data-target="People living far from main cities" data-usage="Input chest X-ray images; outputs the region causing disease" data-contrib="Flask web app with a CNN, deployed on Linode">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -586,6 +683,7 @@
 						<div class="tags"><span class="tag">Python</span><span class="tag">ANN</span><span class="tag">Web Crawling</span></div>
 						<div class="links">
 							<a href="https://github.com/NikhilLamba24/SolLife">GitHub</a>
+							<button class="more-btn" type="button" data-title="Contactless Disease Prediction" data-target="Quarantine-era users seeking quick screening" data-usage="Map two self-reported symptoms to five likely diseases ranked by severity" data-contrib="ANN-based backend with web crawling">More <span class="arrow">→</span></button>
 						</div>
 					</div>
 				</article>
@@ -770,6 +868,26 @@
 		</section>
 	</main>
 
+	<div class="drawer-backdrop" id="drawer-backdrop"></div>
+	<aside class="more-drawer" id="more-drawer" aria-hidden="true">
+		<div class="drawer-head">
+			<h3 class="drawer-title" id="drawer-title"></h3>
+			<button class="drawer-close" id="drawer-close" type="button" aria-label="Close">&times;</button>
+		</div>
+		<div class="drawer-block">
+			<h4>Target</h4>
+			<p id="drawer-target"></p>
+		</div>
+		<div class="drawer-block">
+			<h4>Usage</h4>
+			<p id="drawer-usage"></p>
+		</div>
+		<div class="drawer-block">
+			<h4>Contrib</h4>
+			<p id="drawer-contrib"></p>
+		</div>
+	</aside>
+
 	<footer class="site-foot">
 		<div class="wrap">
 			<span>© Nikhil Lamba · AI Engineer — Agentic AI &amp; Deep Learning</span>
@@ -802,6 +920,42 @@
 				a.addEventListener('click', function () {
 					document.getElementById('menu').checked = false;
 				});
+			});
+		})();
+	</script>
+	<script>
+		(function () {
+			var drawer = document.getElementById('more-drawer');
+			var backdrop = document.getElementById('drawer-backdrop');
+			var title = document.getElementById('drawer-title');
+			var target = document.getElementById('drawer-target');
+			var usage = document.getElementById('drawer-usage');
+			var contrib = document.getElementById('drawer-contrib');
+
+			function openDrawer(btn) {
+				title.textContent = btn.getAttribute('data-title');
+				target.textContent = btn.getAttribute('data-target');
+				usage.textContent = btn.getAttribute('data-usage');
+				contrib.textContent = btn.getAttribute('data-contrib');
+				drawer.classList.add('open');
+				drawer.setAttribute('aria-hidden', 'false');
+				backdrop.classList.add('open');
+				document.body.style.overflow = 'hidden';
+			}
+			function closeDrawer() {
+				drawer.classList.remove('open');
+				drawer.setAttribute('aria-hidden', 'true');
+				backdrop.classList.remove('open');
+				document.body.style.overflow = '';
+			}
+
+			document.querySelectorAll('.more-btn').forEach(function (btn) {
+				btn.addEventListener('click', function () { openDrawer(btn); });
+			});
+			document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+			backdrop.addEventListener('click', closeDrawer);
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape') closeDrawer();
 			});
 		})();
 	</script>
